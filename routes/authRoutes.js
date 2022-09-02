@@ -24,8 +24,9 @@ router.post('/register',async (req,res)=>{
             username : req.body.username, //you need to write this
         }
         const newUser = await User.register(user,req.body.password)
+        res.status(200).send("Registered Successfully :D");
+        res.redirect('/login');
         // res.send(newUser);
-        res.status(200).send(newUser);
         // res.send("it worked");
 
     }
